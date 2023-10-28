@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 import logo from '../../constants/images/miniSidebar/abu-dabi.png';
 import styles from './LoginPage.module.scss'
