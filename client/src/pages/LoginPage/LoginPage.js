@@ -3,6 +3,7 @@ import axios from "axios";
 
 import logo from '../../constants/images/miniSidebar/abu-dabi.png';
 import styles from './LoginPage.module.scss'
+import {authService} from "../../services/auth.service";
 
 const LoginPage = () => {
     const [data, setData] = useState({ username: "", password: "" });
@@ -15,19 +16,25 @@ const LoginPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // try {
+        //     const url = `${process.env.REACT_APP_URL}/auth`;
+        //     const { data: res } = await axios.post(url, data);
+        //     localStorage.setItem("token", res.data);
+        //     window.location = "/";
+        // } catch (error) {
+        //     if (
+        //         error.response &&
+        //         error.response.status >= 400 &&
+        //         error.response.status <= 500
+        //     ) {
+        //         setError(error.response.data.message);
+        //     }
+        // }
         try {
-            const url = "http://localhost:5000/api/auth";
-            const { data: res } = await axios.post(url, data);
-            localStorage.setItem("token", res.data);
-            window.location = "/";
-        } catch (error) {
-            if (
-                error.response &&
-                error.response.status >= 400 &&
-                error.response.status <= 500
-            ) {
-                setError(error.response.data.message);
-            }
+            await authService.login(data);
+        }
+        catch (error) {
+            setError(error.message);
         }
     };
 
