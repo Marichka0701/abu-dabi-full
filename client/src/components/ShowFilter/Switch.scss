@@ -1,22 +1,21 @@
-.css-jsexje-MuiSwitch-thumb {
-  border: 1px solid var(--border-light);
+.MuiSwitch-thumb {
+  border: 1px solid var(--border-light) !important;
   background: var(--white) !important;
   box-shadow: none !important;
 }
 
-.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
-  background: #3B82F6 !important;
+.MuiSwitch-track {
+  background: var(--border-light);
+  //opacity: 1 !important
 }
 
-.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track, .css-1yjjitx-MuiSwitch-track {
-  opacity: 1 !important;
+.Mui-checked {
+  //background:  !important;
+  //opacity: 1 !important;
 }
 
-.css-1yjjitx-MuiSwitch-track {
-  background: var(--border-light) !important;
-}
-
-.css-ahj2mt-MuiTypography-root {
+label > span,
+.MuiFormControlLabel-labelPlacementEnd > span, .MuiFormControlLabel-root > span {
   color: #A0A3A6;
   font-family: Inter, sans-serif;
   font-size: 12px;
