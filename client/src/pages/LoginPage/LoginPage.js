@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import logo from '../../constants/images/miniSidebar/abu-dabi.png';
+import logo from '../../constants/images/miniSidebar/abu-dabi.svg';
 import styles from './LoginPage.module.scss'
 import {authService} from "../../services/auth.service";
 
